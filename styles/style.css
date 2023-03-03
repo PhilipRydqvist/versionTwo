@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Noto Sans');
+
+* {
+    box-sizing: border-box;
+    font-family: Noto Sans;
+}
+
+body {
+    /* background-color: #2A2E30; */
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}

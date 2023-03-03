@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/PhilipRydqvist/versiontwo#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "https-localhost": "^4.7.1"
   }
 }

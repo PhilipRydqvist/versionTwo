@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Noto Sans');
+
+* {
+    box-sizing: border-box;
+    font-family: Noto Sans;
+}
+
+
+body {
+        /* background-color: #2A2E30; */
+        background-color: yellow;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+}
+
+.containerStart {
+       padding-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+}
+
+/* .kamera {
+    
+} */
+
+h1 {
+    font-family: Noto sans;
+    font-style: SemiBold;
+    Font-size: 50px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 30px;
+    }
+    .kamera {
+        width: 50%
+    }
+}
+

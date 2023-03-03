@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Noto Sans');
+
+* {
+    box-sizing: border-box;
+    font-family: Noto Sans;
+}
+
+body {
+    background-color: #2A2E30;
+}
+
+.galleryButton {
+background-color: #2A2E30;
+border: none;
+float: right;
+}
+
+#videoContainer {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#fotoavtryckare-knapp, #fotoavtryckare-knappNyBild {
+    background-color: #FFFFFF;
+    /* border: none;
+    color: #2A2E30;
+    cursor: pointer;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; */
+    width: 280px;
+    height: 25px;
+
+    font-style: normal;
+    font-weight: 700;
+
+    font-size: 16px;
+    line-height: 22px;
+    
+    display: flexbox;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+    
+    /* för kamera funktionen */
+    #videoDiv, #picture-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+    
+
+    #canvasContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #picture {
+        width: 640px;
+        height: 480px;
+    }
+    
+    #picture-div {
+        display: none;
+    }
