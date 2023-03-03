@@ -1,0 +1,24 @@
+{
+  "name": "versiontwo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "SET PORT=3000 && serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilipRydqvist/versiontwo.git"
+  },
+  "keywords": [],
+  "author": "Philip Rydqvist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilipRydqvist/versiontwo/issues"
+  },
+  "homepage": "https://github.com/PhilipRydqvist/versiontwo#readme",
+  "dependencies": {
+    "https-localhost": "^4.7.1"
+  }
+}
