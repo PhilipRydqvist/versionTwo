@@ -82,8 +82,8 @@ takePictureButton.addEventListener('click', () => {
   const imageData =
     canvas.toDataURL('image/png'); /* gör om det till en png-bild */
   videoDiv.style.display = 'none';
-  PictureDiv.style.display = 'flex';
-  console.log(imageData);
+  PictureDiv.style.display = 'block';
+  console.log('imagedata', imageData);
 
   images.push({
     id: images.length,

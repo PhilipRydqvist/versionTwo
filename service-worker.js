@@ -44,11 +44,25 @@ self.addEventListener('fetch', async (event) => {
     return response;
   }
 });
+console.log('update', updateCache);
 
 async function updateCache(request) {
+  const url = new URL(request.url);
+
+  if (
+    url.protocol === 'chrome-extension:' ||
+    url.pathname.includes('extension') ||
+    url.protocol !== 'http:' ||
+    url.protocol !== 'https:'
+  ) {
+    return;
+  }
+
   const response = await fetch(request);
   const cache = await caches.open('v1');
 
   cache.put(request, response.clone());
   return response;
 }
+
+console.log('update2', updateCache);

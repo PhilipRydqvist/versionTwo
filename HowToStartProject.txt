@@ -1,0 +1,5 @@
+1. starta port via npm start
+
+2. starta live server på index i visual code studio
+
+3. skriv i url localhost:5500

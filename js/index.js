@@ -1,6 +1,3 @@
-//skriv i url localhost:5500
-//starta port via npm start
-
 /* const express = require('express');
 const app = express(); */
 
