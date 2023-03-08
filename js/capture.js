@@ -57,7 +57,6 @@ async function cameraStart() {
       });
   }
 }
-
 cameraStart();
 
 newPic.addEventListener('click', () => {
@@ -82,7 +81,7 @@ takePictureButton.addEventListener('click', () => {
   const imageData =
     canvas.toDataURL('image/png'); /* gör om det till en png-bild */
   videoDiv.style.display = 'none';
-  PictureDiv.style.display = 'block';
+  PictureDiv.style.display = 'flex';
   console.log('imagedata', imageData);
 
   images.push({
@@ -93,16 +92,14 @@ takePictureButton.addEventListener('click', () => {
   localStorage.setItem('weddingApp', JSON.stringify(images));
 });
 
-document
-  .getElementById('fotoavtryckareknappNyBild')
-  .addEventListener('click', function () {
-    // Clear the picture canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Show the video stream again
-    videoElem.style.display = 'block';
-    // Hide the picture section
-    PictureDiv.style.display = 'none';
-  });
+document.getElementById('picture').addEventListener('click', function () {
+  // Clear the picture canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // Show the video stream again
+  videoElem.style.display = 'block';
+  // Hide the picture section
+  PictureDiv.style.display = 'none';
+});
 
 /*  Notifikation för bild tagen */
 
