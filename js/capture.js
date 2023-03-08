@@ -1,14 +1,12 @@
 const videoElem = document.querySelector('#camera');
 const takePictureButton = document.querySelector('#fotoavtryckare-knapp');
-const takeNewPictureButton = document.querySelector(
-  '#fotoavtryckareknappNyBild'
-);
+
 const canvas = document.querySelector('#picture');
 const galleryElem = document.querySelector('#gallery');
 
 const videoDiv = document.querySelector('#videoContainer');
 const PictureDiv = document.querySelector('#pictureSection');
-const newPic = document.querySelector('#newPic');
+const newPic = document.querySelector('#fotoavtryckareknappNyBild');
 
 /* var constraints = { audio: false, video: { width: 1280, height: 720 } };  */
 
