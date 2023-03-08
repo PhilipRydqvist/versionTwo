@@ -1,10 +1,10 @@
-fetch(url, {
+/* fetch(url, {
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   },
-});
+}); */
 
 // för att kunna installera appen/sidan
 self.addEventListener('install', (event) => {

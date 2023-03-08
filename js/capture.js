@@ -1,7 +1,7 @@
 const videoElem = document.querySelector('#camera');
 const takePictureButton = document.querySelector('#fotoavtryckare-knapp');
 const takeNewPictureButton = document.querySelector(
-  '#fotoavtryckare-knappNyBild'
+  '#fotoavtryckareknappNyBild'
 );
 const canvas = document.querySelector('#picture');
 const galleryElem = document.querySelector('#gallery');
@@ -67,6 +67,17 @@ newPic.addEventListener('click', () => {
   videoDiv.style.display = 'flex'; // visa videoDiv när vi tar bilden
 });
 
+/* document
+  .getElementById('fotoavtryckareknappNyBild')
+  .addEventListener('click', function () {
+    // Clear the picture canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    // Show the video stream again
+    video.style.display = 'block';
+    // Hide the picture section
+    pictureSection.style.display = 'none';
+  }); */
+
 takePictureButton.addEventListener('click', () => {
   console.log('takePictureButton', takePictureButton);
   ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height); /* clientWidth */
@@ -85,14 +96,14 @@ takePictureButton.addEventListener('click', () => {
 });
 
 document
-  .getElementById('fotoavtryckare-knappNyBild')
+  .getElementById('fotoavtryckareknappNyBild')
   .addEventListener('click', function () {
     // Clear the picture canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Show the video stream again
-    video.style.display = 'block';
+    videoElem.style.display = 'block';
     // Hide the picture section
-    pictureSection.style.display = 'none';
+    PictureDiv.style.display = 'none';
   });
 
 /*  Notifikation för bild tagen */

@@ -8,6 +8,17 @@
     <link rel="manifest" href="manifest.json">
     <title>Bröllopsfotografen</title>
 </head>
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
 <body onClick="nextPage();">
     <div class="containerStart">
     <img src="assets/kamera.png" alt="kamera" class="kamera">
