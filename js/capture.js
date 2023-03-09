@@ -1,12 +1,12 @@
+const videoDiv = document.querySelector('#videoContainer');
 const videoElem = document.querySelector('#camera');
 const takePictureButton = document.querySelector('#fotoavtryckare-knapp');
 
+const pictureDiv = document.querySelector('#pictureSection');
 const canvas = document.querySelector('#picture');
-const galleryElem = document.querySelector('#gallery');
-
-const videoDiv = document.querySelector('#videoContainer');
-const pictureDiv = document.querySelector('#pitureSection');
 const newPic = document.querySelector('#fotoavtryckareknappNyBild');
+
+const galleryElem = document.querySelector('#gallery');
 
 /* var constraints = { audio: false, video: { width: 1280, height: 720 } };  */
 
@@ -124,7 +124,7 @@ takePictureButton.addEventListener('click', () => {
 });
 
 canvas.addEventListener('click', () => {
-  videoElem.style.display = 'block';
+  videoElem.style.display = 'flex';
   pictureDiv.style.display = 'none';
 });
 
@@ -132,7 +132,7 @@ document.getElementById('picture').addEventListener('click', function () {
   // Clear the picture canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Show the video stream again
-  videoElem.style.display = 'block';
+  videoElem.style.display = 'flex';
   // Hide the picture section
   pictureDiv.style.display = 'none';
 });
