@@ -53,7 +53,7 @@ float: right;
 }
     
     /* för kamera funktionen */
-    #videoDiv, #picture-div {
+    #videoDiv, #picturediv {
         display: flex;
         flex-direction: column;
         justify-content: center;

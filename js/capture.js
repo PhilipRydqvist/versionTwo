@@ -5,7 +5,7 @@ const canvas = document.querySelector('#picture');
 const galleryElem = document.querySelector('#gallery');
 
 const videoDiv = document.querySelector('#videoContainer');
-const PictureDiv = document.querySelector('#pictureSection');
+const pictureDiv = document.querySelector('#pitureSection');
 const newPic = document.querySelector('#fotoavtryckareknappNyBild');
 
 /* var constraints = { audio: false, video: { width: 1280, height: 720 } };  */
@@ -46,6 +46,17 @@ if (imagesFromStorage) {
 } */
 
 async function cameraStart() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    videoElem.srcObject = stream;
+    videoElem.play();
+  } catch (error) {
+    console.error('Error starting camera:', error);
+  }
+}
+cameraStart();
+
+/* async function cameraStart() {
   if ('mediaDevices' in navigator) {
     navigator.mediaDevices
       .getUserMedia({ video: true })
@@ -58,9 +69,10 @@ async function cameraStart() {
   }
 }
 cameraStart();
+ */
 
 newPic.addEventListener('click', () => {
-  PictureDiv.style.display = 'none'; // göm pictureDiv när vi tar bilden
+  pictureDiv.style.display = 'none'; // göm pictureDiv när vi tar bilden
   videoDiv.style.display = 'flex'; // visa videoDiv när vi tar bilden
 });
 
@@ -75,14 +87,33 @@ newPic.addEventListener('click', () => {
     pictureSection.style.display = 'none';
   }); */
 
-takePictureButton.addEventListener('click', () => {
+/* takePictureButton.addEventListener('click', () => {
   console.log('takePictureButton', takePictureButton);
-  ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height); /* clientWidth */
+  ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height); // clientWidth 
   const imageData =
-    canvas.toDataURL('image/png'); /* gör om det till en png-bild */
+    canvas.toDataURL('image/png'); // gör om det till en png-bild 
   videoDiv.style.display = 'none';
-  PictureDiv.style.display = 'flex';
+  pictureDiv.style.display = 'flex';
   console.log('imagedata', imageData);
+
+  images.push({
+    id: images.length,
+    image: imageData,
+  });
+  sendNotif();
+  localStorage.setItem('weddingApp', JSON.stringify(images));
+}); */
+
+takePictureButton.addEventListener('click', () => {
+  if (!stream) {
+    console.error('No camera stream');
+    return;
+  }
+  ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height);
+  const imageData = canvas.toDataURL('image/png');
+  videoDiv.style.display = 'none';
+  pictureDiv.style.display = 'flex';
+  console.log('image data:', imageData);
 
   images.push({
     id: images.length,
@@ -92,13 +123,18 @@ takePictureButton.addEventListener('click', () => {
   localStorage.setItem('weddingApp', JSON.stringify(images));
 });
 
+canvas.addEventListener('click', () => {
+  videoElem.style.display = 'block';
+  pictureDiv.style.display = 'none';
+});
+
 document.getElementById('picture').addEventListener('click', function () {
   // Clear the picture canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Show the video stream again
   videoElem.style.display = 'block';
   // Hide the picture section
-  PictureDiv.style.display = 'none';
+  pictureDiv.style.display = 'none';
 });
 
 /*  Notifikation för bild tagen */
@@ -131,6 +167,18 @@ function notifs() {
 notifs();
 
 function sendNotif() {
+  if (Notification.permission === 'granted') {
+    const notification = new Notification('Bröllopsfotografen', {
+      body: 'Klick! Din bild är nu sparad, klicka här för att se den i galleriet!',
+    });
+
+    notification.onclick = function () {
+      window.open('https://localhost/gallery.html');
+    };
+  }
+}
+
+/* function sendNotif() {
   if (notificationPermission !== 'granted') {
     return;
   } // har dom godkänt notiser, då kan vi fortsätta
@@ -145,9 +193,22 @@ function sendNotif() {
   notification.onclick = function () {
     window.open('https://localhost/gallery.html');
   };
-}
+} */
 
 function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('../service-worker.js')
+      .then(() => {
+        console.log('Registered service worker');
+      })
+      .catch(() => {
+        console.log;
+      });
+  }
+}
+
+/* function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('../service-worker.js')
@@ -158,6 +219,6 @@ function registerServiceWorker() {
         console.log('Could not register service worker');
       });
   }
-}
+} */
 
 registerServiceWorker();
