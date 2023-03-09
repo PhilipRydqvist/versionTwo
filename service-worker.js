@@ -10,7 +10,7 @@
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('v1').then((cache) => {
-      return cache.addAll(['Offline.html', './styles/index.css']);
+      return cache.addAll(['offline.html', './styles/index.css']);
     })
   );
 
@@ -27,7 +27,7 @@ self.addEventListener('fetch', async (event) => {
   console.log(event.request.url);
   if (!navigator.onLine) {
     // Kolla om vi har internet eller ej, ger tillbaka true/false
-    console.log('Offline');
+    console.log('offline');
     event.respondWith(
       caches.match(event.request).then((response) => {
         console.log('RESPONSE:', response);
