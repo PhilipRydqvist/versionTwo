@@ -1,6 +1,6 @@
 const galleryElem = document.querySelector('#gallery');
 
-const images = JSON.parse(localStorage.getItem('weddingApp')); // läggs utanför alla funktioner för att allt skall kunna nå denna
+let images = JSON.parse(localStorage.getItem('weddingApp')); // läggs utanför alla funktioner för att allt skall kunna nå denna
 
 //Hämtar från localstorage
 function createImage(image) {
@@ -26,6 +26,7 @@ function createImage(image) {
     );
     console.log(newArr);
     localStorage.setItem('weddingApp', JSON.stringify(newArr));
+    images = newArr;
   });
 
   div.append(imageElem); //Lägger in i galleriet

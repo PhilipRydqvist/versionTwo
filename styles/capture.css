@@ -9,11 +9,16 @@ body {
     background-color: #2A2E30;
 }
 
+#buttonDiv {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .galleryButton {
     background-color: #2A2E30;
     border: none;
     display:flex;
-    float: right;
+    
 }
 
 #videoContainer {
@@ -26,71 +31,57 @@ body {
 
 #fotoavtryckare-knapp {
     background-color: #FFFFFF;
-    display: flex;
-     border: none;
-    color: #2A2E30;
-    cursor: pointer;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px; 
-    
+    border: none;
     height: 70px;
     width: 342px;
-    left: 24px;
-    top: 745px;
-    border-radius: 4px;
-    /* padding: 24px 16px 24px 16px; */
+    border-radius: 4px; 
+    padding: 24px 16px;
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 24px 16px 24px 16px; 
     Gap: 10px;
+    
+    display: flex;
+    justify-content: center;
 
+    /* för texten */
+    color: #2A2E30;
+    font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 700;
-
     font-size: 16px;
-    line-height: 22px;
-    
-    display: flexbox;
-    align-items: center;
+    line-height: 22px;  
     text-align: center;
+    text-decoration: none;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
 #fotoavtryckareknappNyBild {
     display: none;
-    display: flex;
     background-color: #FFFFFF;
     border: none;
-    color: #2A2E30;
-    cursor: pointer;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px; 
-    
     height: 70px;
     width: 342px;
-    border-radius: 4px;
-    /* padding: 24px 16px 24px 16px; */
+    border-radius: 4px; 
+    padding: 24px 16px;
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 24px 16px 24px 16px; 
     Gap: 10px;
+    
+    display: flex;
+    justify-content: center;
 
+    /* för texten */
+    color: #2A2E30;
+    font-family: 'Noto Sans';
     font-style: normal;
     font-weight: 700;
-
     font-size: 16px;
-    line-height: 22px;
-    
-    display: flexbox;
-    align-items: center;
+    line-height: 22px;  
     text-align: center;
+    text-decoration: none;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -106,6 +97,10 @@ body {
         max-width: 342px;
     }
     
+    #camera {
+        width: 342px;
+        height: 291px;
+    }
 
    /*  #canvasContainer {
         display: flex;
