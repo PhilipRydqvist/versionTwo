@@ -20,10 +20,13 @@ function createImage(image) {
     console.log(image);
     console.log(images);
     let newArr = images.filter(
-      (
-        imageInFilter //inageInFilter = går igenom alla bilders ID när dom raderas. Alla bilder vi vill behålla ligger i newArr
-      ) => image.image != imageInFilter.image //Jag vill inte behålla den bilden jag just tog bort
+      (imageInFilter) => image.id !== imageInFilter.id
     );
+    //let newArr = images.filter(
+    //  (
+    //    imageInFilter //inageInFilter = går igenom alla bilders ID när dom raderas. Alla bilder vi vill behålla ligger i newArr
+    //  ) => image.image != imageInFilter.image //Jag vill inte behålla den bilden jag just tog bort
+    // );
     console.log(newArr);
     localStorage.setItem('weddingApp', JSON.stringify(newArr));
     images = newArr;
