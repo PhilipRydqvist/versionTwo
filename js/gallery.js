@@ -5,6 +5,7 @@ const images = JSON.parse(localStorage.getItem('weddingApp')); // läggs utanfö
 //Hämtar från localstorage
 function createImage(image) {
   const div = document.createElement('div'); // detta gör vi för att samla bild med sin tillhörande knapp, se nedan.
+  div.setAttribute('divImageGallery', div.id);
   const imageElem = document.createElement('img');
   imageElem.setAttribute('src', image.image);
 

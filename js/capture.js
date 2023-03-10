@@ -71,11 +71,6 @@ cameraStart();
 cameraStart();
  */
 
-newPic.addEventListener('click', () => {
-  pictureDiv.style.display = 'none'; // göm pictureDiv när vi tar bilden
-  videoDiv.style.display = 'flex'; // visa videoDiv när vi tar bilden
-});
-
 /* document
   .getElementById('fotoavtryckareknappNyBild')
   .addEventListener('click', function () {
@@ -112,6 +107,7 @@ takePictureButton.addEventListener('click', () => {
   ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height);
   const imageData = canvas.toDataURL('image/png');
   videoDiv.style.display = 'none';
+  newPic.style.display = 'flex';
   pictureDiv.style.display = 'flex';
   console.log('image data:', imageData);
 
@@ -125,7 +121,14 @@ takePictureButton.addEventListener('click', () => {
 
 canvas.addEventListener('click', () => {
   videoElem.style.display = 'flex';
+  newPic.style.display = 'flex';
   pictureDiv.style.display = 'none';
+});
+
+newPic.addEventListener('click', () => {
+  pictureDiv.style.display = 'none'; // göm pictureDiv när vi tar bilden
+  newPic.style.display = 'none';
+  videoDiv.style.display = 'flex'; // visa videoDiv när vi tar bilden
 });
 
 document.getElementById('picture').addEventListener('click', function () {

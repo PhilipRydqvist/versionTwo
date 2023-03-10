@@ -36,6 +36,21 @@ body {
 
 }
 
+#divImageGallery { 
+    height: 139px;
+    width: 163px;
+    left: 24px;
+    top: 123px;
+    border-radius: 4px;
+
+}
+
+#imgGal{
+    height: 139px;
+    width: 163px;
+    border-radius: 4px;
+}
+
 /* Deleteknapp  */
 #gallery div {
     position: relative;

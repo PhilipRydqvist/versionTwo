@@ -7,11 +7,11 @@
 
 
 body {
-        /* background-color: #2A2E30; */
-        background-color: yellow;
-        /* display: flex;
+         background-color: #2A2E30; 
+      
+         display: flex;
         flex-direction: column;
-        align-items: center; */
+        align-items: center; 
 }
 
 .containerStart {
