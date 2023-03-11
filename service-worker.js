@@ -10,7 +10,14 @@
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('v1').then((cache) => {
-      return cache.addAll(['offline.html', './styles/index.css']);
+      return cache.addAll([
+        './offline.html',
+        './styles/index.css',
+        './capture.html',
+        './styles/capture.css',
+        './gallery.html',
+        './styles/gallery.css',
+      ]);
     })
   );
 
@@ -45,6 +52,27 @@ self.addEventListener('fetch', async (event) => {
   }
 });
 console.log('update', updateCache);
+
+const staticAssets = [
+  './',
+  './index.html',
+  './styles/index.css',
+  './js/index.js',
+  './capture.html',
+  './js/capture.js',
+  './styles/capture.css',
+  './gallery.html',
+  './js/gallery.js',
+  './styles/gallery.css',
+  './offline.html',
+  './styles/offline.css',
+];
+
+self.addEventListener('install', async (event) => {
+  self.skipWaiting();
+  const cache = await caches.open('static-cache');
+  cache.addAll(staticAssets);
+});
 
 async function updateCache(request) {
   const url = new URL(request.url);

@@ -128,3 +128,10 @@ body {
     #picture-div {
         display: none;
     }
+
+    @media screen and (max-height: 799px) {
+        #fotoavtryckare-knapp, #fotoavtryckareknappNyBild  {
+            margin-top: 30%;
+        }
+        
+    }
