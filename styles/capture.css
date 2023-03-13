@@ -106,13 +106,6 @@ body {
         height: 291px;
     }
 
-   /*  #canvasContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    } */
-
     #picture {
         width: 342px;
         height: 291px;
@@ -132,6 +125,17 @@ body {
     @media screen and (max-height: 799px) {
         #fotoavtryckare-knapp, #fotoavtryckareknappNyBild  {
             margin-top: 30%;
+        }
+        
+    }
+
+    @media screen and (min-height: 899px) /* and (min-width: 499) */ {
+        #fotoavtryckare-knapp, #fotoavtryckareknappNyBild  {
+            margin-top: 0%;
+        }
+        #camera {
+            width: 500px;
+            height: 500px;
         }
         
     }

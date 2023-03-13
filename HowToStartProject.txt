@@ -1,5 +1,8 @@
 1. starta port via npm run start
 
-2. starta live server på index i visual code studio
+2. skriv i url https://localhost:3000
+(haft massa problem med https-localhost, 
+fick installera om flera gånger genom att ta bort package-lock.json och node modules.
+För att sedan npm i och npm install https-localhost)
 
-3. skriv i url localhost:5500
+3. Har gjort om ccsen så den fungerar med mobil framförallt, ser inte bra ut i helskärm.

@@ -8,20 +8,6 @@ const newPic = document.querySelector('#fotoavtryckareknappNyBild');
 
 const galleryElem = document.querySelector('#gallery');
 
-/* var constraints = { audio: false, video: { width: 1280, height: 720 } };  */
-
-/* function avTryckare () {
-    onclick=""
-} */
-
-/* const status = await navigator.permissions.query({name: "camera"});
-status.addEventListener("change", (evt) => {
-    navigator.mediaDevices.getUserMedia({ video: true })
-    .then(handleStream)
-    .catch(handleDeny);
-}, { once: true });
- */
-
 // kamera och galleri
 const ctx = canvas.getContext('2d');
 let stream;
@@ -34,17 +20,6 @@ if (imagesFromStorage) {
   images = []; // om inga bilder finns lägger vi till våra nya
 }
 
-/* async function cameraStart() {
-  if ('mediaDevices' in navigator) {
-    stream = await navigator.mediaDevices.getUserMedia({
-      video: true,
-      audio: false,
-    });
-    console.log(stream);
-    videoElem.srcObject = stream;
-  }
-} */
-
 async function cameraStart() {
   try {
     stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -55,49 +30,6 @@ async function cameraStart() {
   }
 }
 cameraStart();
-
-/* async function cameraStart() {
-  if ('mediaDevices' in navigator) {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then(function (stream) {
-        videoElem.srcObject = stream;
-      })
-      .catch(function (err) {
-        console.log(err.name + ': ' + err.message);
-      });
-  }
-}
-cameraStart();
- */
-
-/* document
-  .getElementById('fotoavtryckareknappNyBild')
-  .addEventListener('click', function () {
-    // Clear the picture canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    // Show the video stream again
-    video.style.display = 'block';
-    // Hide the picture section
-    pictureSection.style.display = 'none';
-  }); */
-
-/* takePictureButton.addEventListener('click', () => {
-  console.log('takePictureButton', takePictureButton);
-  ctx.drawImage(videoElem, 0, 0, canvas.width, canvas.height); // clientWidth 
-  const imageData =
-    canvas.toDataURL('image/png'); // gör om det till en png-bild 
-  videoDiv.style.display = 'none';
-  pictureDiv.style.display = 'flex';
-  console.log('imagedata', imageData);
-
-  images.push({
-    id: images.length,
-    image: imageData,
-  });
-  sendNotif();
-  localStorage.setItem('weddingApp', JSON.stringify(images));
-}); */
 
 takePictureButton.addEventListener('click', () => {
   if (!stream) {
@@ -181,23 +113,6 @@ function sendNotif() {
   }
 }
 
-/* function sendNotif() {
-  if (notificationPermission !== 'granted') {
-    return;
-  } // har dom godkänt notiser, då kan vi fortsätta
-  let text =
-    'Klick! Din bild är nu sparad, klicka här för att se den i galleriet!';
-
-  const notification = new Notification('Bröllopsfotografen', {
-    body: text,
-    //icon: './favicon.ico', // lägg till kamera bild här från figma.
-  });
-
-  notification.onclick = function () {
-    window.open('https://localhost/gallery.html');
-  };
-} */
-
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
@@ -210,18 +125,5 @@ function registerServiceWorker() {
       });
   }
 }
-
-/* function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('../service-worker.js')
-      .then(() => {
-        console.log('Registered service worker');
-      })
-      .catch(() => {
-        console.log('Could not register service worker');
-      });
-  }
-} */
 
 registerServiceWorker();

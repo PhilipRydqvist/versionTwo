@@ -1,21 +1,20 @@
 {
-    "name": "Bröllopsfotografen",
-    "short_name": "Brollop",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
-    "start_url": "/index.html",
-    "icons": [
-        {
-            "src": "./icons/icon-kameraORG.png",
-            "type": "image/png",
-            "sizes": "192x192"
-        },
-        {
-            "src": "./icons/icon-320.png",
-            "type": "image/png",
-            "sizes": "512x512"
-        }
-        
-    ]
+  "name": "Bröllopsfotografen",
+  "short_name": "Brollop",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "./icons/icon-kameraORG.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/icon-320.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
