@@ -1,8 +1,16 @@
+
 1. starta port via npm run start
 
 2. skriv i url https://localhost:3000
-(haft massa problem med https-localhost, 
+
+//haft massa problem med https-localhost, 
 fick installera om flera gånger genom att ta bort package-lock.json och node modules.
-För att sedan npm i och npm install https-localhost)
+För att sedan npm i och npm install https-localhost
+(npm i --save-dev @types/https-localhost, npm install https-localhost, declare module, fil: https-localhost.d.ts, declare module 'https-localhost'; )
+git rm node modules
+git rm package-lock.json
+npm i
+npm install https-localhost
+npm update
 
 3. Har gjort om ccsen så den fungerar med mobil framförallt, ser inte bra ut i helskärm.
